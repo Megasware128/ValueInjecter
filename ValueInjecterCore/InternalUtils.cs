@@ -5,7 +5,8 @@ namespace Omu.ValueInjecter
 {
     internal static class InternalUtils
     {
-        internal static PropertyInfo GetProperty(this Type type, string name)
+#if NETSTANDARD1_6
+    internal static PropertyInfo GetProperty(this Type type, string name)
         {
             return type.GetTypeInfo().GetProperty(name);
         }
@@ -19,15 +20,19 @@ namespace Omu.ValueInjecter
         {
             return type.GetTypeInfo().GetProperties(flags);
         }
-
         internal static Type[] GetInterfaces(this Type type)
         {
             return type.GetTypeInfo().GetInterfaces();
         }
+#endif
 
         internal static bool IsInterface(this Type type)
         {
+#if NETSTANDARD1_6
             return type.GetTypeInfo().IsInterface;
+#else
+            return type.IsInterface;
+#endif
         }
     }
 }

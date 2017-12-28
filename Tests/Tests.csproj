@@ -127,9 +127,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ValueInjecter\ValueInjecter.csproj">
-      <Project>{3c3ed7e4-062d-4c4f-a0e1-8f1a1efce1b6}</Project>
-      <Name>ValueInjecter</Name>
+    <ProjectReference Include="..\ValueInjecterCore\ValueInjecterCore.csproj">
+      <Project>{1ce448b5-73d9-4355-a0e8-6f41b7671846}</Project>
+      <Name>ValueInjecterCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
